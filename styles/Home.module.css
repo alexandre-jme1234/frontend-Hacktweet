@@ -1,22 +1,76 @@
 .main {
+  height: 100vh;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 35vw);
+  background-color: rgb(21, 19, 24);
+  grid-gap: 0px;
+    grid-template-areas:
+          "Grid Size"
+}
+
+.backgroundImage {
+  grid-area: "Grid Size";
+  height: auto;
+  width: auto;
+  background-image: url(../public/background.jpeg);
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.loginGrid {
+  grid-area: "Grid Size";
+  height: auto;
+  width: auto;
+}
+
+.contentSide {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  justify-content: space-evenly;
+  padding: 10%;
+}
+
+.logo {
+  height: 20vh;
+  width: 40%;
+  background-image: url(../public/logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@font-face {
+  font-family: "MontHeavy";
+  src: url('../public//font/MontHeavy.otf');
 }
 
 .title {
-  line-height: 1.15;
-  font-size: 4rem;
+  font-family: 'MontHeavy';
+  color: white;
+  font-size: 3.5em;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.signBlock {
+  height: 15vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10%;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.subTitle{
+  font-family: 'MontHeavy';
+  color: white;
+  font-size: 1.5em;
+}
+
+.textTitle {
+  font-family: 'MontHeavy';
+  color: white;
+  font-size: 0.75em;
 }
