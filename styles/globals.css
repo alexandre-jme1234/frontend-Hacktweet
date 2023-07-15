@@ -9,3 +9,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.ant-modal-content{
+  background-color: #161d28 !important;
+}
+
+.ant-modal-close{
+  color: #FFFFFF !important;
+}

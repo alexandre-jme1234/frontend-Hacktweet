@@ -1,7 +1,17 @@
 import styles from '../styles/Home.module.css';
-import { Button } from "antd";
+import SignIn from './SignIn';
+import { Button, Modal } from "antd";
+import {  useState  } from 'react';
 
 function Home() {
+  const [open, setOpen] = useState(false);
+  const showModal = () => {
+    setOpen(true);
+  };
+  const hideModal = () => {
+    setOpen(false);
+  };
+
   return (
     <div>
       <main className={styles.main}>
@@ -13,9 +23,34 @@ function Home() {
           <h1 className={styles.subTitle}>Join Hackatweet today.</h1> 
           </div>
           <div className={styles.signBlock}>
-          <Button type="primary">Primary Button</Button>
+            <>
+          <Button type="primary" onClick={showModal}>Sign Up</Button>
+          <Modal
+        title="Modal"
+        open={open}
+        onOk={hideModal}
+        onCancel={hideModal}
+        okText="Suivant"
+        cancelText="Annuler"
+      >
+       <SignIn />
+      </Modal>
+            </>
           <h1 className={styles.textTitle}>Already have an account ?</h1>
-          <Button type="default" >Secondary Button</Button> 
+          <>
+          <Button type="default" onClick={showModal}>Sign In</Button>
+          {/* <Modal
+        title="Modal"
+        open={open}
+        onOk={hideModal}
+        onCancel={hideModal}
+        okText="Suivant"
+        cancelText="Annuler"
+        >
+        <div className={styles.subLogo} alt="Logo" />
+        <SignIn />
+      </Modal>  */}
+          </>
           </div>
         </div>
       </main>

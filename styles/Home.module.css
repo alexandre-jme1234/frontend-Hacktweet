@@ -43,6 +43,14 @@
   background-repeat: no-repeat;
 }
 
+.subLogo{
+  height:2vh;
+  width: 40%;
+  background-image: url(../public/logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 @font-face {
   font-family: "MontHeavy";
   src: url('../public//font/MontHeavy.otf');
