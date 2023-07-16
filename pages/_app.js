@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../components/Home'
 
 import Head from 'next/head';
 

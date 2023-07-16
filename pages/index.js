@@ -1,8 +1,8 @@
-import Home from '../components/Home';
-
+import App from '../components/App';
+import Dashboard from '../components/Dashboard';
 
 function Index() {
-  return <Home />;
+  return <Dashboard />;
 }
 
 export default Index;
