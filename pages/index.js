@@ -1,8 +1,7 @@
 import App from '../components/App';
-import Dashboard from '../components/Dashboard';
 
 function Index() {
-  return <Dashboard />;
+  return <App />;
 }
 
 export default Index;

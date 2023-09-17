@@ -59,7 +59,8 @@
 .title {
   font-family: 'MontHeavy';
   color: white;
-  font-size: 3.5em;
+  font-size: 2em;
+  margin: 2px;
 }
 
 .signBlock {
@@ -74,7 +75,7 @@
 .subTitle{
   font-family: 'MontHeavy';
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .textTitle {
@@ -83,3 +84,11 @@
   font-size: 0.75em;
 }
 
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: fit-content;
+  width: auto;
+}

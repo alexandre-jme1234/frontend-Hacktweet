@@ -1,0 +1,42 @@
+.ListTweet {
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    padding-top: 2vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20vh;
+    width: auto;
+    padding: 20px 0px 20px 0px;
+    border-top: solid white;
+}
+
+.rowTitle{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgUser {
+    height: 5vh;
+    width: 5vw;
+    background-image: url(../public/user-profil.png);
+    background-position: center;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    align-self: flex-start;
+}
+
+.rowBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 5vw;
+}

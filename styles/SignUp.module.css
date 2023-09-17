@@ -41,12 +41,14 @@
   }
 
 .blockInput {
-    display: flex;
+  display: flex;
     width:  auto;
-    height: 10vh;
+    height: 12vh;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 2%;
+    margin-bottom: 7%;
 }
 
 .inputStyle:focus {

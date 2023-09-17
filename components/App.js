@@ -1,6 +1,7 @@
 import Dashboard from "./Dashboard";
 import Home from "./Home";
 import { useState } from "react";
+import ReactDOM from 'react-dom';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     return (
       <div className="App">
         {
-          currentForm === 'login' ? <Home toggleForm={toggleForm} /> : <Dashboard />
+          currentForm === 'login' ? <Home toggleForm={toggleForm} /> : <Dashboard toggleForm={toggleForm}/>
         }
       </div>
     );

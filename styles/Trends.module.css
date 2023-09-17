@@ -1,0 +1,20 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: fit-content;
+    width: auto;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #1F2731;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: fit-content;
+    width: auto;
+}

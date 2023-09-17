@@ -2,7 +2,11 @@ import styles from "../styles/SignUp.module.css";
 import { useState, useEffect } from "react";
 import { Button, Modal } from "antd";
 
+import { useDispatch } from "react-redux";
+import { addNameToStore } from "../reducers/user";
+
 function SignUp(props) {
+  const dispatch = useDispatch();
   const [openSignup, setOpenSignup] = useState(false);
 
   const [email, setEmail] = useState("");
@@ -24,7 +28,8 @@ function SignUp(props) {
   const handleSubmit = () => {
 
     console.log('pasword sent _', password)
-    console.log('email sent _', email)
+    console.log('email sent _', email) 
+    dispatch(addNameToStore({name: username, email: email}))
 
         fetch("http://localhost:3000/users/signup", {
           method: "POST",
@@ -35,7 +40,7 @@ function SignUp(props) {
           .then((data) => {
                 console.log('good', data.result)
                 if(data.result === true) {
-                    setCreateValidate(true)
+                    setCreateValidate(true)                 
                     console.log('ValeurInitial _', props.stateLogged(true))
                 }
 

@@ -2,22 +2,27 @@ import styles from "../styles/SignIn.module.css";
 import { useState, useEffect } from "react";
 import { Button, Modal } from "antd";
 
+import { useDispatch } from "react-redux";
+import { addNameToStore } from "../reducers/user";
+
 function SignIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [open, setOpen] = useState(false);
 
-  const [confIsLoging, SetConfIsLoging ] = useState(null)
+  const [confIsLoging, SetConfIsLoging] = useState(null);
 
-  const verifyUserLoging = () => {
-      return SetConfIsLoging(current => !current)
-}
+  const dispatch = useDispatch();
 
-useEffect( () => {
+  // const verifyUserLoging = () => {
+  //   return SetConfIsLoging((current) => !current);
+  // };
+
+  useEffect(() => {
     props.stateLogged(confIsLoging);
-    console.log('ConfirmConnexionRemonté _', confIsLoging);
-}, [confIsLoging]);
+    console.log("ConfirmConnexionRemonté _", confIsLoging);
+  }, [confIsLoging]);
 
   const handleSubmit = () => {
     const user = {
@@ -25,19 +30,25 @@ useEffect( () => {
       email: email,
       password: password,
     };
-    console.log('name', name)
-    fetch("http://localhost:3000/users/signin", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    })
 
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.result)
-        if(data.result === true) {
-            verifyUserLoging(props.isLogged)
-            console.log('ValeurInitial _', props.isLogged)
+    dispatch(addNameToStore({name: user.name, email: user.email}))
+    
+    fetch("http://localhost:3000/users/signin", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json" 
+      },
+        body: JSON.stringify(user),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.result === true) {
+            props.stateLogged(true);
+            console.log("ValeurInitial _", data.result);
+        } else {
+            console.log('reponse fetch : data _', data);
+            console.log('User doesn t exists');
         }
       });
   };
