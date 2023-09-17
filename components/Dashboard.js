@@ -31,7 +31,7 @@ function Dashboard(props) {
         bodyTweet={filterTweet}
         username={username.name}
         email={username.email}
-        hashTag={hashTag}
+        hashTag={hashTag} 
       />
     );
   });
