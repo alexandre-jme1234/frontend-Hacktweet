@@ -31,7 +31,7 @@ function SignUp(props) {
     console.log('email sent _', email) 
     dispatch(addNameToStore({name: username, email: email}))
 
-        fetch("http://localhost:3000/users/signup", {
+        fetch("https://backend-hacktweet.vercel.app/users/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({email, password}),

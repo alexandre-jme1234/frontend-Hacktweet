@@ -33,7 +33,7 @@ function SignIn(props) {
 
     dispatch(addNameToStore({name: user.name, email: user.email}))
     
-    fetch("http://localhost:3000/users/signin", {
+    fetch("https://backend-hacktweet.vercel.app/signin", {
         method: "POST",
         headers: {
           "Accept": "application/json",
